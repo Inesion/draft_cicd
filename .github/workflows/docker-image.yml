@@ -13,6 +13,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      with:
+        config-inline: |
+          [registry."185.217.125.52:5000"]
+            http = true
+            insecure = true
+    
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: |
