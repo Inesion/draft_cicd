@@ -25,5 +25,5 @@ jobs:
         IP_SECRET: ${{ secrets.ip }}
       run: |
         docker build . --file Dockerfile --tag cicd_clem:latest
-        docker tag cicd_clem "$IP_SECRET"/cicd_clem:latest
-        docker push "$IP_SECRET"/cicd_clem:latest
+        docker tag cicd_clem "$IP_SECRET":5000/cicd_clem:latest
+        docker push "$IP_SECRET":5000/cicd_clem:latest
