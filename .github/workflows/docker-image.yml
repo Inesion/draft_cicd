@@ -24,7 +24,6 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: |
-        set DOCKER_BUILDKIT=0
         docker build . --file Dockerfile --tag cicd_clem:latest
         docker tag cicd_clem 185.217.125.52:5000/cicd_clem:latest
         docker push 185.217.125.52:5000/cicd_clem:latest
