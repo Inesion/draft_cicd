@@ -18,5 +18,5 @@ jobs:
       run: |
         set DOCKER_BUILDKIT=0
         docker build . --file Dockerfile --tag cicd_clem:latest
-        docker tag cicd_clem 185.217.125.52:5000/cicd_clem:latest
-        docker push 185.217.125.52:5000/cicd_clem:latest
+        docker tag cicd_clem http://185.217.125.52:5000/cicd_clem:latest
+        docker push http://185.217.125.52:5000/cicd_clem:latest
