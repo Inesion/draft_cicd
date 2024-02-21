@@ -22,7 +22,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       env:
-        IP_SECRET: ${{ secrets.ip }}
+        IP_SECRET: ${{ secrets.IP_SECRET }}
       run: |
         docker build . --file Dockerfile --tag cicd_clem:latest
         docker tag cicd_clem "$IP_SECRET":5000/cicd_clem:latest
